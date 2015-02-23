@@ -1379,9 +1379,9 @@ var ExampleData = React.createClass({
     if (sortColumn != "") {
       ordering = sortColumn;
       if (sortAscending) {
-        ordering += " desc";
-      } else {
         ordering += " asec";
+      } else {
+        ordering += " desc";
       }
     }
     // Get data with limits
