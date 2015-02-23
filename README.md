@@ -17,5 +17,8 @@ Be aware that it might be confusing to your users and queries can be constructed
 The demo provided uses static data sent down to the client.  
 You should poll data from a server and do filtering on a real database.
 
-# License
+## License
 BSD License
+
+## Demo
+Check out the [docs](http://summitroute.github.io/react-structured-filter/) and [demo](http://summitroute.github.io/react-structured-filter/demo.html)
