@@ -1,0 +1,155 @@
+.griddle-container{
+	border: 1px solid #DFDFDF;
+	border-radius: 0px;
+}
+
+.griddle thead {
+	background-color: #E0E0E0;
+}
+
+.griddle .top-section{
+	clear:both;
+	display:table;
+	width:100%;
+}
+
+.griddle .griddle-filter {
+	float:left;
+	width:50%;
+	text-align:left;
+	color:#222;
+	min-height:1px;
+	margin-top:0px;
+	padding-top:0px;
+	margin-bottom:10px;
+	margin-bottom:10px;
+}
+
+.filter-container {
+	clear: both;
+	margin: 0px;
+	width: 100%;
+}
+
+.griddle .griddle-settings-toggle {
+	float:left;
+	width:50%;
+	text-align:right;
+}
+
+.griddle .griddle-settings{
+	background-color:#FFF;
+	border:1px solid #DDD;
+	color:#222;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+
+.griddle .griddle-settings .griddle-columns{
+	clear:both;
+	display:table-row;
+	width:100%;
+	border-bottom:1px solid #EDEDED;
+	margin-bottom:10px;
+}
+
+.griddle .griddle-settings .griddle-columns .griddle-column-selection:first-child:before {
+	content: 'Show/hide columns:';
+}
+
+.griddle .griddle-settings .griddle-column-selection {
+	margin-top:0px;
+	float:left;
+}
+
+/* Get rid of "Settings" text when we view the settings */
+.griddle .griddle-settings h6 {
+	display: none;
+}
+
+/* Convert settings from checkboxes to links */
+.griddle .griddle-settings input[type=checkbox] {
+	display: none;
+}
+.griddle .griddle-settings input[type=checkbox] + span {
+	color: #aaa;
+}
+.griddle .griddle-settings input[type=checkbox]:checked + span {
+	color: #000;
+	text-decoration: underline;
+}
+
+
+.griddle table {
+	width:100%;table-layout:fixed;
+	margin-bottom:0px;
+}
+
+.griddle th {
+	cursor: pointer;
+	background-color:#E0E0E0;
+	border:0px;
+	border:1px solid #DDD;
+	color:#222;
+}
+
+.griddle td {
+	border: 1px solid #DDD;
+	color:#222;
+	font-size: 90%;
+}
+
+
+/* Compress size */
+.griddle table>tbody>tr>td, .griddle .table>thead>tr>th  {
+	padding: 2px;
+}
+
+/* Make alternating rows different colors */
+.griddle table tbody tr:nth-child(even) {
+	background-color: #F0F0F0;
+}
+
+/* High-light row on hover */
+.griddle table tbody tr:hover {
+	background-color:#D0D0E0;
+}
+
+
+.griddle .footer-container {
+  font-size: 90%;
+  background-color: #E0E0E0;
+	padding:0px;
+	color:#222;
+}
+
+.griddle .griddle-previous, .griddle .griddle-page, .griddle .griddle-next{
+	float:left;
+	width:33%;
+	min-height:1px;
+	margin-top:5px;
+}
+
+.griddle .griddle-page{
+	text-align:center;
+}
+
+.griddle .griddle-next{
+	text-align:right;
+}
+
+.griddle button {
+	border:none;
+	background:none;
+	margin:0 10px 0 0;
+	font-weight: bold;
+}
+
+.griddle button:focus {outline:0;}
+
+/* Fix overflows */
+.griddle .standard-row td{
+	word-wrap : break-word;
+	overflow: hidden;
+}

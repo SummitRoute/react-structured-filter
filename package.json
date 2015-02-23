@@ -1,0 +1,36 @@
+{
+  "name": "react-structured-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browserify":"*",
+    "envify": "^1.2.1",
+    "es6-promise": "*",
+    "fuzzy": "^0.1.0",
+    "gulp": "*",
+    "gulp-browserify": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-concat": "*",
+    "gulp-watch": "*",
+    "react": "*",
+    "react-async": "^2.0.1",
+    "moment": "*",
+    "tether": "*",
+    "react-onclickoutside": "*",
+    "reactify": "git://github.com/andreypopp/reactify.git#v0.16.0",
+    "reqwest": "*",
+    "griddle-react": "0.2.4",
+    "griddle-callback": "0.2.0",
+    "react-bootstrap": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Summit Route LLC",
+  "license": "BSD"
+}
