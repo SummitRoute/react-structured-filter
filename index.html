@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="react-structured-filter - A structured filter written for ReactJS">
+
+  <title>react-structured-filter</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">react-structured-filter documentation</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <h1>react-structured-filter</h1>
+        <p>react-structured-filter is a javascript library that provides autocomplete faceted search queries.
+          This was inspired by <a href="http://documentcloud.github.io/visualsearch">visualsearch</a> and <a href="https://github.com/evoluteur/structured-filter">structured-filter</a>
+           but redone for <a href="http://facebook.github.io/react/">React</a>.
+
+        <p>It is heavily based on <a href="https://github.com/fmoo/react-typeahead">react-typeahead</a> and uses some modified code from
+          <a href="https://github.com/Hacker0x01/react-datepicker">react-datepicker</a>.
+          It was developed to be used with <a href="http://dynamictyped.github.io/Griddle/">Griddle</a>, but should be usable with <a href="https://github.com/facebook/fixed-data-table">fixed-data-table</a>.
+
+        <p>It is used by <a href="https://summitroute.com/">Summit Route</a> internally for analyzing our data.
+        We needed an interface to provide advanced querying capabilities.
+        Be aware that this might be confusing to your users and queries can be constructed that may not be performant on your dataset.
+
+        <hr>
+        <h2>Demo</h2>
+        <h3><a href="./demo.html">Click here for Demo</a></h3>
+        The demo provided uses static data sent down to the client.  You should poll data from a server and do filtering on a real database.
+
+
+        <hr>
+        <h2>Capabilities</h2>
+        This library creates <b>facets</b> built from 3 auto-completed entries, which are a <b>Category</b>, <b>Operator</b>, and <b>Value</b>.
+
+        <h3>Selecting a Category</h3>
+        <img src="./images/select_category.png">
+
+        <h3>Selecting an Operator</h3>
+        <img src="./images/select_operator.png">
+
+        <h3>Selecting a Value</h3>
+        <img src="./images/select_value.png">
+
+        <h3>Facet result</h3>
+        <img src="./images/facet_result.png">
+
+        <h3>Multiple facets</h3>
+        Filtering can work on different data types, whether it's a value with choices (<b>textoptions</b>), an arbitrary <b>text</b> value, a <b>number</b>, or a <b>date</b>.
+        <img src="./images/multiple_facets.png">
+
+        <hr>
+        <h2>Filter data</h2>
+        Once a facet is complete, the filter string is updated.  An example filter string is:
+        <pre>
+[
+ {"category":"Name","operator":"contains","value":"invest"},
+ {"category":"MarketCap","operator":">","value":"1000000"},
+ {"category":"IPO","operator":"<","value":"2010-02-23"}
+]</pre>
+
+        <hr>
+        <h2>Usage</h2>
+        <ol>
+        <li>To use, construct a component with a <tt>StructuredFilter</tt> and a <tt>GriddleWithCallback</tt>.
+        <li>You'll need to write a <tt>getJsonData</tt> function for the <tt>GriddleWithCallback</tt>, and you'll need to do a lot of server-side work to handle the filter string.
+        <li>You'll create an <tt>updateFilter</tt> function which simply updates the states, which results in the <tt>GriddleWithCallback</tt> updating it's filter by calling <tt>getJsonData</tt>.
+        <li>Then in the <tt>StructuredFilter</tt>, pass <tt>onTokenAdd={this.updateFilter} onTokenRemove={this.updateFilter}</tt> and pass it a set of options, for example:
+          <pre>
+options={[
+  {category:"Symbol", type:"textoptions", options:this.getSymbolOptions},
+  {category:"Name",type:"text"},
+  {category:"Price",type:"number"},
+  {category:"IPO", type:"date"},
+]}</pre>
+        </ol>
+
+        <hr>
+        <h2>Options</h2>
+        The <tt>options</tt> property passed to <tt>StructuredFilter</tt> must be an array of structures with the components <tt>category</tt> and <tt>type</tt>.
+        <ul>
+        <li><b>category</b>: Name of the first thing the user types.
+        <li><b>type</b>: This can be one of the following:
+          <ul>
+            <li><b>text</b>: Arbitrary text for the value. No autocomplete options.
+              <ul><li>Operator choices will be: "==", "!=", "contains", "!contains".</ul>
+            <li><b>textoptions</b>: You must additionally pass an <tt>options</tt> value which will be a function that returns the list of options choices as an array
+              (for example <tt>function getOptions() {return ["MSFT", "AAPL", "GOOG"]}</tt>).
+              <ul><li>Operator choices will be: "==", "!=".</ul>
+            <li><b>number</b>: Arbitrary text for the value. No autocomplete options.
+              <ul><li>Operator choices will be: "==", "!=", "<", "<=", ">", ">=".</ul>
+            <li><b>date</b>: Shows a calendar and the input must be of the form "YYYY-MM-DD".
+              <ul><li>Operator choices will be: "==", "!=", "<", "<=", ">", ">=".</ul>
+          </ul>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
