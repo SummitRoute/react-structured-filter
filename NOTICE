@@ -1,0 +1,22 @@
+react-structured-filter library
+Copyright (c) 2015, Summit Route LLC.
+For license information see the LICENSE file which accompanies this
+NOTICE file.
+
+
+
+This product contains a modified version of the react-typeahead library which is Copyright (c) 2013, Peter Ruibal.
+
+  * License: ISC
+    * https://github.com/fmoo/react-typeahead/blob/master/LICENSE
+  * Homepage:
+    * https://github.com/fmoo/react-typeahead
+
+
+
+This product contains a modified version of the react-datepicker library which is Copyright (c) 2014 HackerOne Inc and individual contributers.
+
+  * License: MIT
+    * https://github.com/Hacker0x01/react-datepicker/blob/master/LICENSE
+  * Homepage:
+    * https://github.com/Hacker0x01/react-datepicker
