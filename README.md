@@ -1,5 +1,5 @@
 
-# react-structured-filter
+# react-structured-filter (unmaintained)
 react-structured-filter is a javascript library that provides autocomplete faceted search queries.  
 This was inspired by [visualsearch](http://documentcloud.github.io/visualsearch) and
 [structured-filter](https://github.com/evoluteur/structured-filter) but redone for
